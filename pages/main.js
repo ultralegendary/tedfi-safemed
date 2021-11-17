@@ -18,8 +18,7 @@ export default function Main() {
         <Grid templateColumns="repeat(3, 1fr)" gap={10} padding="10px">
         <Card name="mali" percentage="30%" imgurl="https://cdn.discordapp.com/attachments/821703990709977138/909026295076225044/bizthonlogo.PNG" description="This is a meefj fejafejfk fjak"/>
         </Grid>
-            
-
+        
     </div>
 
 

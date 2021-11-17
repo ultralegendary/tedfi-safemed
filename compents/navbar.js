@@ -6,7 +6,7 @@ import * as React from "react"
 export default function Navbar() {
     return (
     //bgColor="#1c1a2b"
-    <HStack direction="row" w="" padding="15px" spacing={10} className="nav" justifyContent="center" bgGradient="linear(to-r, yellow.200, #8d9c3d)">
+    <HStack direction="row" w="" padding="15px" spacing={10} className="nav" justifyContent="center" bgGradient="linear(to-r, #17633c,#23203d)">
         
         <Button colorScheme="teal" variant="outline" color="#6615a1">
           Home
