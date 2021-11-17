@@ -7,7 +7,7 @@ return(
         <SimpleGrid padding="40px" columns={[4]} spacingY="50px" spacingX="350px" >
             {
                 props.data.map((item,index)=>(
-                    <Card name={item.name} percentage="30%" imgurl="https://cdn.discordapp.com/attachments/821703990709977138/909026295076225044/bizthonlogo.PNG" description={item.description} />
+                    <Card name={item.name} percentage="30%" imgurl={item.img_url} description={item.description} />
                 )
                 )}
         </SimpleGrid>
