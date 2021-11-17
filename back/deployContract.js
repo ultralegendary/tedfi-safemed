@@ -30,17 +30,6 @@ var abiDefinition = JSON.parse(abi);
 var VotingContract = web3.eth.contract(abiDefinition);
 
 var contractInstance;
-//2. VotingContract.new below deploys the contract to the blockchain.
-
-//The first parameter is contract constructor parameters. We pass in our 3 candidates (an array of bytes32 as defined in our contract constructor
-//Note: if our contract tool more parameters, they be listed in order following the first parameter
-
-//The next parameter is the info needed to actually deploy the contract:
-//data: This is the compiled bytecode that we deploy to the blockchain
-//from: The blockchain has to keep track of who deployed the contract. In this case, we are just picking the first account. In the live blockchain, you can not just use any account. You have to own that account and unlock it before transacting. You are asked for a passphrase while creating an account and that is what you use to prove your ownership of that account. Testrpc by default unlocks all the 10 accounts for convenience.
-//gas: It costs money to interact with the blockchain. This money goes to miners who do all the work to include your code in the blockchain. You have to specify how much money you are willing to pay to get your code included in the blockchain and you do that by setting the value of ‘gas’. The ether balance in your ‘from’ account will be used to buy gas. The price of gas is set by the network. The amount of gas it takes to execute a transaction or deployment is calculated by the operations in the contract / function being executed.
-
-//The final parameter is a callback function. After the contract is deployed this function will be called with either an error or our contract instance
 
 var deployedContract = VotingContract.new(
   [],

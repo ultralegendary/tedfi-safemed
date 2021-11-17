@@ -19,7 +19,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.19.5",
-    "solc": "^0.8.10",
+    "solc": "^0.4.11",
     "web3": "^0.20.1"
   },
   "devDependencies": {

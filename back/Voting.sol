@@ -8,39 +8,39 @@ contract Voting {
   mapping (uint8 => uint8) public votesReceived;
 
   /* Solidity doesn't let you pass in an array of strings in the constructor (yet).
-  We will use an array of uint8 instead to store the list of Medcines
+  We will use an array of uint8 instead to store the list of Medicines
   */
 
-  uint8[] public MedcineNames;
+  uint8[] public MedicineNames;
 
   /* This is the constructor which will be called once and only once - when you
   deploy the contract to the blockchain. When we deploy the contract,
-  we will pass an array of Medcines who will be contesting in the election
+  we will pass an array of Medicines who will be contesting in the election
   */
   constructor() {
-    MedcineNames=new uint8[](10);
+    MedicineNames=new uint8[](10);
   }
-  function newProduct(uint8 Medcine) returns (bool)
+  function newProduct(uint8 Medicine) returns (bool)
   {
-    MedcineNames.push(Medcine);
+    MedicineNames.push(Medicine);
     return true;
   }
-  // This function returns the total votes a Medcine has received so far
-  function totalVotesFor(uint8 Medcine) returns (uint8) {
-    assert(validMedcine(Medcine) == true);
-    return votesReceived[Medcine];
+  // This function returns the total votes a Medicine has received so far
+  function totalVotesFor(uint8 Medicine) returns (uint8) {
+    assert(validMedicine(Medicine) == true);
+    return votesReceived[Medicine];
   }
 
-  // This function increments the vote count for the specified Medcine. This
+  // This function increments the vote count for the specified Medicine. This
   // is equivalent to casting a vote
-  function voteForMedcine(uint8 Medcine) {
-    assert(validMedcine(Medcine) == true);
-    votesReceived[Medcine] += 1;
+  function voteForMedicine(uint8 Medicine) {
+    assert(validMedicine(Medicine) == true);
+    votesReceived[Medicine] += 1;
   }
 
-  function validMedcine(uint8 Medcine) returns (bool) {
-    for(uint i = 0; i < MedcineNames.length; i++) {
-      if (MedcineNames[i] == Medcine) {
+  function validMedicine(uint8 Medicine) returns (bool) {
+    for(uint i = 0; i < MedicineNames.length; i++) {
+      if (MedicineNames[i] == Medicine) {
         return true;
       }
     }

@@ -1,19 +1,17 @@
-  import { Image ,Typography,InputGroup, Box,NumberInput,NumberInputField,NumberInputStepper,NumberIncrementStepper,NumberDecrementStepper, Text,HStack,VStack,Button,Stack,Spacer,FormControl,FormLabel,Input, Grid } from "@chakra-ui/react"
+import { Image ,Typography,InputGroup, Box,NumberInput,NumberInputField,NumberInputStepper,NumberIncrementStepper,NumberDecrementStepper, Text,HStack,VStack,Button,Stack,Spacer,FormControl,FormLabel,Input, Grid } from "@chakra-ui/react"
 import * as React from "react"
 import { useForm } from "react-hook-form";
 import Navbar from "../compents/navbar"
 import Card from "../compents/card"
 import { createClient } from '@supabase/supabase-js'
 import Footer from "../compents/footer"
+import {supabase} from "../compents/supa"
 export default function CreatePost(props) {
   const registerUser = async event => {
     event.preventDefault()
     
   }
-  const supabaseUrl = 'https://jetjcnitoqjhaddkhcew.supabase.co'
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const supabase = createClient(supabaseUrl,String(supabaseKey));
-  
+  console.log("react app supa base key")
   const {  register, handleSubmit, formState: { errors} } = useForm();
 
 //  const onSubmit = data => console.log(data);

@@ -5,11 +5,10 @@ import Card from "../compents/card"
 
 import { createClient } from '@supabase/supabase-js'
 import MoreCard from "../compents/morecards"
-
+import {supabase} from "../compents/supa"
 
 export default function Main({data}) {
-  console.log("fff")
-  console.log(data)
+  
   return (
     <div Style="background-color:black;">
         <Navbar/>
@@ -36,15 +35,12 @@ export default function Main({data}) {
 
 
 export async function getServerSideProps(context) {
-  const supabaseUrl = 'https://jetjcnitoqjhaddkhcew.supabase.co'
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const supabase = createClient(supabaseUrl,String(supabaseKey));
   
   let { data, error } = await supabase
 .from('med_details')
 .select('*');
 
-
+console.log(data)
   return {
     props: {data}, // will be passed to the page component as props
   }
