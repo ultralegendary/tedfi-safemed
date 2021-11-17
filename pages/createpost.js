@@ -11,30 +11,21 @@ export default function CreatePost(props) {
     
   }
   const supabaseUrl = 'https://jetjcnitoqjhaddkhcew.supabase.co'
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNzA4MjE3OCwiZXhwIjoxOTUyNjU4MTc4fQ.19O9f19syyGg6-tU_SGeSW_Ryezip6B5DAfLNvmO-Vs'
-  const supabase = createClient(supabaseUrl, supabaseKey)
+  const supabaseKey = process.env.SUPABASE_KEY;
+  console.log(supabaseKey);
+  const supabase = createClient(supabaseUrl,String(supabaseKey));
   const {  register, handleSubmit, formState: { errors} } = useForm();
 
 //  const onSubmit = data => console.log(data);
 
   async function onSubmit(values) {
-    console.log(JSON.stringify(values, null, 2));
-    // return new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     alert(JSON.stringify(values, null, 2));
-    //     resolve();
-    //   }, 3000);
-    // });
     
     const { data, error } = await supabase
   .from('med_details')
   .insert([
-    values// AKA the json here
+    values
   ])
-  console.log({values})
-  
-  console.log(error)
-  console.log("ehre")
+    console.log(error)
   }
   function registerMed(values) {
     console.log(values)
@@ -64,22 +55,16 @@ from
                   <FormControl id="first-name" isRequired>
                       
                     <FormLabel color="white">Name</FormLabel>
-                    <Input placeholder="Name" {...register("name")} />
+                    <Input color="white" placeholder="Name" {...register("name")} />
                     
                     <FormLabel color="white">Medical Company/Pharmacy</FormLabel>
-                    <Input placeholder="Company Name" {...register("company_name")} />
+                    <Input color="white" placeholder="Company Name" {...register("company_name")} />
                     <FormLabel color="white">Description</FormLabel>
-                    <Input placeholder="description" {...register("description")} />
+                    <Input color="white" placeholder="description" {...register("description")} />
                     <FormLabel color="white">Price</FormLabel>
-                    <NumberInput max={50000} min={0}{...register("price")} >
-                    <NumberInputField />
-                        <NumberInputStepper color="white">
-                        <NumberIncrementStepper />
-                        <NumberDecrementStepper />
-                        </NumberInputStepper>
-                     </NumberInput>
+                    <Input color="white" placeholder="price" {...register("price")} />
                     <FormLabel color="white">Expired Time</FormLabel>
-                    <Input placeholder="Expired Time" {...register("expiry")}/>
+                    <Input color="white" placeholder="Expired Time" {...register("expiry")}/>
 
                     </FormControl>
                     </InputGroup>
