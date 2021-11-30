@@ -20,11 +20,11 @@ export default function Description(props)
             <Image w="300px" padding="30px"  src={props.img_url} borderRadius="20%" />
             <Text fontSize="6xl" m={5} as="b" fontWeight="10cm" fontStyle="Roboto" color="white" >{props.name}</Text>
             </Center>
-            <Text fontSize="2xl" padding="10" m={5} as="b" fontWeight="10cm" fontStyle="Roboto" color="white" >Votes : {votes}</Text>
-            <Text fontSize="3xl" paddingRight="100px"  textAlign="right" as="abbr" fontWeight="10cm" fontStyle="Roboto" color="white" >{props.company_name}</Text>
-            <Text fontSize="2xl" m={5} paddingLeft="50px" fontStyle="Roboto" color="white" >price: {props.price}</Text>
+            <Text fontSize="2xl" padding="50px" m={5} as="b" fontWeight="10cm" fontStyle="Roboto" color="white" >Votes : {votes}</Text>
+            <Text fontSize="3xl" paddingLeft="50px"  textAlign="left" as="abbr" fontWeight="10cm" fontStyle="Roboto" color="white" >Company name: {props.company_name}</Text>
+            <Text fontSize="2xl" m={5} paddingLeft="50px" fontStyle="Roboto" color="white" >Price: ${props.price}</Text>
             <Text fontSize="2xl" m={5} paddingLeft="50px" fontStyle="Roboto" color="white" >Expiry: {props.expiry}</Text>
-            <Text fontSize="3xl" m={1} padding="40px" fontStyle="Roboto" color="white">{props.description}</Text>
+            <Text fontSize="3xl" m={1} padding="40px" fontStyle="Roboto" color="white">Description: <br/> {props.description}</Text>
             <Center>
             <Button bg="black" height="60px" w="40%" onClick={() => setVote(votes + 1)}>
             <Text fontSize="5xl"  borderColor="Black" fontWeight="10cm" fontStyle="Roboto" color="white" >Vote</Text>

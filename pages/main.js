@@ -7,8 +7,9 @@ import { createClient } from '@supabase/supabase-js'
 import MoreCard from "../compents/morecards"
 import {supabase} from "../compents/supa"
 
-export default function Main({data}) {
-  
+export default function Main(props) {
+ console.log(supabase)
+    
   return (
     <div Style="background-color:black;">
         <Navbar/>
@@ -22,8 +23,8 @@ export default function Main({data}) {
         </HStack>
         
         <Grid templateColumns="repeat(3, 1fr)" gap={10} padding="10px">
-        
-        <MoreCard data={data}/>
+          
+        <MoreCard data={props.data}/>
 
         </Grid>
         
@@ -37,10 +38,13 @@ export default function Main({data}) {
 export async function getServerSideProps(context) {
   
   let { data, error } = await supabase
-.from('med_details')
-.select('*');
-
-console.log(data)
+  .from('med_details')
+   .select('*');
+   if(!data) {
+    return {
+      notFound: true,
+    }
+   }
   return {
     props: {data}, // will be passed to the page component as props
   }

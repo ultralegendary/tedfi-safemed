@@ -6,24 +6,24 @@ import * as React from "react"
 export default function Navbar() {
     return (
     //bgColor="#1c1a2b"
-    <HStack direction="row" w="" padding="15px" spacing={10} className="nav" justifyContent="center" bgGradient="linear(to-r, #17633c,#23203d)">
+    <HStack direction="row" w="" padding="15px" spacing={10} className="nav" justifyContent="center" bgGradient="linear(to-r,#13547a,#80d0c7)">
         <Link href="/main">
-        <Button colorScheme="teal" variant="outline" color="#6615a1">
+        <Button variant="" color="WHITE">
           Home
         </Button>
         </Link>
         <Link href="/createpost">
-        <Button colorScheme="teal" variant="outline" color="#6615a1">
+        <Button variant="" color="WHITE">
           Create post
         </Button>
         </Link>
         <Link href="/MyPosts">
-        <Button colorScheme="teal" variant="outline" color="#6615a1">
+        <Button variant="" color="WHITE">
           My posts
         </Button>
         </Link>
         <Link href="/About">
-        <Button colorScheme="teal" variant="outline" color="#6615a1">
+        <Button variant="" color="WHITE">
           About SafeMed
         </Button>
         </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
               pointerEvents="none"
               children={<SearchIcon color="gray.300" />}
             />
-            <Input type="text" variant="filled" bg="#55593d" placeholder="Search" _hover="" w="150px"/>
+            <Input type="text" bg="" placeholder="Search" _hover="" w="150px"/>
         </InputGroup>
         </ButtonGroup>
         

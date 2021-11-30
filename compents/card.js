@@ -12,9 +12,9 @@ export default function Card(props){
             }
         }}>
         <VStack bg="grey" w="300px" borderRadius="10%">
-            <Image fallbackSrc={props.imgurl} src="memo.png" borderTopRadius="inherit"/>
-            <Stack bg="#5c6361" padding="10px" height="100px" w="inherit" borderBottomRadius="20">
-                <Text>{props.name} | {props.percentage}</Text>
+            <Image boxSize="300px" fallbackSrc={props.imgurl}  objectFit='cover' src="memo.png" borderTopRadius="inherit"/>
+            <Stack paddingLeft="30px" paddingTop="10px" height="100px" w="inherit" borderBottomRadius="20">
+                <Text fontWeight="Bold">{props.name} | {props.percentage}</Text>
                 <Text>{props.description}</Text>
             </Stack>
         </VStack>

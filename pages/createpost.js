@@ -11,13 +11,16 @@ export default function CreatePost(props) {
     event.preventDefault()
     
   }
-  console.log("react app supa base key")
+  
   const {  register, handleSubmit, formState: { errors} } = useForm();
 
 //  const onSubmit = data => console.log(data);
 
   async function onSubmit(values) {
-    
+    const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNzA4MjE3OCwiZXhwIjoxOTUyNjU4MTc4fQ.19O9f19syyGg6-tU_SGeSW_Ryezip6B5DAfLNvmO-Vs'
+const supabaseUrl = 'https://jetjcnitoqjhaddkhcew.supabase.co'
+console.log('supabase', supabaseUrl)
+ const supabase = createClient(String(supabaseUrl), String(supabaseAnonKey))
     const { data, error } = await supabase
   .from('med_details')
   .insert([
@@ -32,7 +35,7 @@ export default function CreatePost(props) {
   
 
   return (
-<div Style="background-color:black;">
+<div style={{"background-color":"black"}}>
         <Navbar/>
         <VStack height="1000px" bg="#040c21" padding="100px" spacing={20} >
             <Stack height={[200]} spacing={0} bgGradient="linear(to-r,#6255ed, #23203d)"  w={[800]} borderTopRadius="10%30%">
