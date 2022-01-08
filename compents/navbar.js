@@ -7,7 +7,7 @@ export default function Navbar() {
     return (
     //bgColor="#1c1a2b"
     <HStack direction="row" w="" padding="15px" spacing={10} className="nav" justifyContent="center" bgGradient="linear(to-r,#13547a,#80d0c7)">
-        <Link href="/main">
+        <Link href="/">
         <Button variant="" color="WHITE">
           Home
         </Button>

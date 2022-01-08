@@ -6,7 +6,7 @@ import Footer from "../compents/footer"
 import { supabase } from "../compents/supa"
 export default function Description(props)
 {
-    const [votes,setVote] = React.useState(23)
+    const [votes,setVote] = React.useState(props.votes)
 
     return(
         
